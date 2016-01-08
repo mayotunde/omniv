@@ -7,31 +7,20 @@
 <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
 <script src='../leaflet-omnivore.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
-<style>
-  body { margin:0; padding:0; }
-  #map { position:absolute; top:0; bottom:0; width:100%; }
-</style>
+
 </head>
 <body>
 <div id='map'></div>
 <script>
-var map = L.mapbox.map('map', 'mapbox.streets')
-    .setView([38, -102.0], 5);
+var map = L.mapbox.map('map', 'mapbox.light')
+    .setView([9.00, 8.00], 8);
 
 function log(_) {
     if (typeof console == 'object') console.log(_);
 }
 
 omnivore.csv('a.csv').addTo(map);
-omnivore.gpx('a.gpx').addTo(map);
-omnivore.kml('a.kml').addTo(map);
-omnivore.geojson('a.geojson')
-    .on('ready', function() {
-        log('geojson loaded');
-    })
-    .addTo(map);
-omnivore.topojson('a.topojson').addTo(map);
-omnivore.wkt('a.wkt').addTo(map);
+
 </script>
 </body>
 </html>
