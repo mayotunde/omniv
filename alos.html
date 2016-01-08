@@ -12,11 +12,13 @@
 <body>
 <div id='map'style='width:700px;height:500px'></div>
 <script>
-var map = L.map('map').setView([9, 7], 3);
-attr = 'map data &copy;<a href="http://mapsnigeriainitiative.wordpress.com">mapsNi</a>,'+'<a href="http://openstreetmap.org">OSM</a>';
-L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: attr}).addTo(map);
-
+var map = L.mapbox.map('map', 'mapbox.streets')
+    .setView([12, 2.9], 5);
+function log(_) {
+    if (typeof console == 'object') console.log(_);
+}
 omnivore.csv('spot.csv').addTo(map);
+
 
 </script>
 </body>
