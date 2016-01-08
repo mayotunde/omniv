@@ -15,9 +15,6 @@
 var map = L.mapbox.map('map', 'mapbox.light')
     .setView([9.00, 8.00], 8);
 
-function log(_) {
-    if (typeof console == 'object') console.log(_);
-}
 
 omnivore.csv('a.csv').addTo(map);
 
